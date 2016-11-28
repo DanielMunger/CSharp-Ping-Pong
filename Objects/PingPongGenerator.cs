@@ -8,11 +8,10 @@ namespace PingPong
       private int _upperLimit;
       private static List<string> _listOfInts = new List<string> {};
 
-      // public void PingPong(int UpperLimit)
-      // {
-      //   _upperLimit = UpperLimit;
-      //   _listOfInts.Add(this);
-      // }
+      public PingPong(int UpperLimit)
+      {
+        _upperLimit = UpperLimit;
+      }
 
       public bool IsDivisiblebyThree(int EqualityTest)
       {
@@ -27,6 +26,32 @@ namespace PingPong
       public bool IsDivisiblebyFifteen(int EqualityTest)
       {
         return EqualityTest % 15 == 0;
+      }
+
+      public List<string> PingPongGenerator(int upperLimit)
+      {
+        for (int i = 1; i <= upperLimit; i++)
+        {
+          if (IsDivisiblebyFifteen(i)) {
+            _listOfInts.Add("ping-pong");
+          } else if (IsDivisiblebyFive(i)) {
+            _listOfInts.Add("pong");
+          } else if (IsDivisiblebyThree(i)) {
+              _listOfInts.Add("ping");
+          } else {
+           _listOfInts.Add(i.ToString());
+         }
+        }
+        foreach (var item in _listOfInts)
+        {
+          System.Console.WriteLine(item);
+        }
+        return _listOfInts;
+      }
+
+      public List<string> GetList()
+      {
+        return _listOfInts;
       }
   }
 }
