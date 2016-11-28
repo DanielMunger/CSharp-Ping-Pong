@@ -18,5 +18,15 @@ namespace PingPong
       {
         return EqualityTest % 3 == 0;
       }
+
+      public bool IsDivisiblebyFive(int EqualityTest)
+      {
+        return EqualityTest % 5 == 0;
+      }
+
+      public bool IsDivisiblebyFifteen(int EqualityTest)
+      {
+        return EqualityTest % 15 == 0;
+      }
   }
 }
